@@ -1,0 +1,199 @@
+{
+    "cars": [
+      {
+        "id": 1,
+        "model": "Toyota Corolla",
+        "type": "Sedan",
+        "pricePerDay": 40,
+        "availability": ["2024-01-15", "2024-01-16", "2024-01-17"],
+        "image": "toyota-corolla.jpg",
+        "description": "A reliable sedan for everyday use."
+      },
+      {
+        "id": 2,
+        "model": "Honda Civic",
+        "type": "Sedan",
+        "pricePerDay": 45,
+        "availability": ["2024-01-18", "2024-01-19", "2024-01-20"],
+        "image": "honda-civic.jpg",
+        "description": "A stylish and fuel-efficient sedan."
+      },
+      {
+        "id": 3,
+        "model": "Ford Mustang",
+        "type": "Coupe",
+        "pricePerDay": 100,
+        "availability": ["2024-01-21", "2024-01-22", "2024-01-23"],
+        "image": "ford-mustang.jpg",
+        "description": "An iconic muscle car with great performance."
+      },
+      {
+        "id": 4,
+        "model": "Chevrolet Tahoe",
+        "type": "SUV",
+        "pricePerDay": 90,
+        "availability": ["2024-01-24", "2024-01-25", "2024-01-26"],
+        "image": "chevrolet-tahoe.jpg",
+        "description": "A spacious SUV perfect for family trips."
+      },
+      {
+        "id": 5,
+        "model": "Tesla Model 3",
+        "type": "Sedan",
+        "pricePerDay": 120,
+        "availability": ["2024-01-15", "2024-01-16", "2024-01-17"],
+        "image": "tesla-model-3.jpg",
+        "description": "A modern electric sedan with cutting-edge technology."
+      },
+      {
+        "id": 6,
+        "model": "BMW X5",
+        "type": "SUV",
+        "pricePerDay": 140,
+        "availability": ["2024-01-18", "2024-01-19", "2024-01-20"],
+        "image": "bmw-x5.jpg",
+        "description": "A luxury SUV with outstanding comfort."
+      },
+      {
+        "id": 7,
+        "model": "Mercedes-Benz C-Class",
+        "type": "Sedan",
+        "pricePerDay": 150,
+        "availability": ["2024-01-21", "2024-01-22", "2024-01-23"],
+        "image": "mercedes-c-class.jpg",
+        "description": "A high-performance sedan with advanced features."
+      },
+      {
+        "id": 8,
+        "model": "Audi Q7",
+        "type": "SUV",
+        "pricePerDay": 130,
+        "availability": ["2024-01-24", "2024-01-25", "2024-01-26"],
+        "image": "audi-q7.jpg",
+        "description": "A luxurious SUV with impressive technology."
+      },
+      {
+        "id": 9,
+        "model": "Hyundai Elantra",
+        "type": "Sedan",
+        "pricePerDay": 35,
+        "availability": ["2024-01-15", "2024-01-16", "2024-01-17"],
+        "image": "hyundai-elantra.jpg",
+        "description": "An affordable and efficient sedan."
+      },
+      {
+        "id": 10,
+        "model": "Jeep Wrangler",
+        "type": "SUV",
+        "pricePerDay": 85,
+        "availability": ["2024-01-18", "2024-01-19", "2024-01-20"],
+        "image": "jeep-wrangler.jpg",
+        "description": "A rugged SUV for off-road adventures."
+      },
+      {
+        "id": 11,
+        "model": "Chevrolet Camaro",
+        "type": "Coupe",
+        "pricePerDay": 95,
+        "availability": ["2024-01-21", "2024-01-22", "2024-01-23"],
+        "image": "chevrolet-camaro.jpg",
+        "description": "A powerful and sporty coupe."
+      },
+      {
+        "id": 12,
+        "model": "Nissan Altima",
+        "type": "Sedan",
+        "pricePerDay": 40,
+        "availability": ["2024-01-24", "2024-01-25", "2024-01-26"],
+        "image": "nissan-altima.jpg",
+        "description": "A practical sedan for long drives."
+      },
+      {
+        "id": 13,
+        "model": "Volkswagen Passat",
+        "type": "Sedan",
+        "pricePerDay": 50,
+        "availability": ["2024-01-15", "2024-01-16", "2024-01-17"],
+        "image": "volkswagen-passat.jpg",
+        "description": "A comfortable sedan with great features."
+      },
+      {
+        "id": 14,
+        "model": "Mazda CX-5",
+        "type": "SUV",
+        "pricePerDay": 75,
+        "availability": ["2024-01-18", "2024-01-19", "2024-01-20"],
+        "image": "mazda-cx5.jpg",
+        "description": "A compact SUV with a premium interior."
+      },
+      {
+        "id": 15,
+        "model": "Kia Sorento",
+        "type": "SUV",
+        "pricePerDay": 80,
+        "availability": ["2024-01-21", "2024-01-22", "2024-01-23"],
+        "image": "kia-sorento.jpg",
+        "description": "A versatile SUV with ample seating."
+      },
+      {
+        "id": 16,
+        "model": "Subaru Outback",
+        "type": "SUV",
+        "pricePerDay": 70,
+        "availability": ["2024-01-24", "2024-01-25", "2024-01-26"],
+        "image": "subaru-outback.jpg",
+        "description": "An all-weather SUV for outdoor enthusiasts."
+      },
+      {
+        "id": 17,
+        "model": "Ford Explorer",
+        "type": "SUV",
+        "pricePerDay": 90,
+        "availability": ["2024-01-15", "2024-01-16", "2024-01-17"],
+        "image": "ford-explorer.jpg",
+        "description": "A spacious SUV with advanced safety features."
+      },
+      {
+        "id": 18,
+        "model": "Chrysler 300",
+        "type": "Sedan",
+        "pricePerDay": 60,
+        "availability": ["2024-01-18", "2024-01-19", "2024-01-20"],
+        "image": "chrysler-300.jpg",
+        "description": "A full-size sedan with premium amenities."
+      },
+      {
+        "id": 19,
+        "model": "Toyota RAV4",
+        "type": "SUV",
+        "pricePerDay": 85,
+        "availability": ["2024-01-21", "2024-01-22", "2024-01-23"],
+        "image": "toyota-rav4.jpg",
+        "description": "A compact SUV with excellent fuel economy."
+      },
+      {
+        "id": 20,
+        "model": "Lexus RX",
+        "type": "SUV",
+        "pricePerDay": 125,
+        "availability": ["2024-01-24", "2024-01-25", "2024-01-26"],
+        "image": "lexus-rx.jpg",
+        "description": "A luxury SUV with a quiet and smooth ride."
+      }
+    ],
+    "bookings": [
+      {
+        "id": 1,
+        "carId": 1,
+        "user": "John Doe",
+        "dates": ["2024-01-18", "2024-01-19"]
+      },
+      {
+        "id": 2,
+        "carId": 5,
+        "user": "Jane Smith",
+        "dates": ["2024-01-20", "2024-01-21"]
+      }
+    ]
+  }
+  
