@@ -30,3 +30,14 @@
   object-fit: cover;
   border-radius: 10px;
 }
+
+.car-info {
+  margin-top: 1rem;
+}
+
+.car-info h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+
