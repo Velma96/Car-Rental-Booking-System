@@ -4,4 +4,7 @@ import "./Navbar.css";
 const Navbar = () => {
     return (
       <nav className="navbar">
-    
+        <h1 className="navbar-title">Car Rental</h1>
+        <ul className="navbar-links">
+          <li>
+         
