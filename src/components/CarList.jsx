@@ -19,11 +19,24 @@ const CarList = () => {
       {cars.map((car) => (
         <div
           key={car.id}
-          className={`car-card ${car.availability.length === 0 ? "unavailable" : ""}`}
+          className={`car-card ${
+            car.availability.length === 0 ? "unavailable" : ""
+          }`}
         >
           <img src={car.image} alt={car.model} className="car-image" />
           <div className="car-info">
-          <h2>{car.model}</h2>
+            <h2>{car.model}</h2>
             <p>Type: {car.type}</p>
             <p>Price: ${car.pricePerDay}/day</p>
-            
+            <p>
+              Availability:{" "}
+              {car.availability.length > 0 ? "Available" : "Unavailable"}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default CarList;
