@@ -40,4 +40,9 @@
   margin-bottom: 0.5rem;
 }
 
-
+.no-cars {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #999;
+  margin-top: 2rem;
+}
