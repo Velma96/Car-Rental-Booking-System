@@ -10,3 +10,16 @@ const CarList = () => {
       .then((data) => setCars(data))
       .catch((err) => console.error("Error fetching cars:", err));
   }, []);
+
+  if (!cars.length) {
+    return <p className="no-cars">No cars available.</p>;
+  }
+  return (
+    <div className="car-list">
+      {cars.map((car) => (
+        <div
+          key={car.id}
+          className={`car-card ${car.availability.length === 0 ? "unavailable" : ""}`}
+        >
+          <img src={car.image} alt={car.model} className="car-image" />
+          <div className="car-info">
