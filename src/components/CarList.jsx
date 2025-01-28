@@ -23,3 +23,7 @@ const CarList = () => {
         >
           <img src={car.image} alt={car.model} className="car-image" />
           <div className="car-info">
+          <h2>{car.model}</h2>
+            <p>Type: {car.type}</p>
+            <p>Price: ${car.pricePerDay}/day</p>
+            
