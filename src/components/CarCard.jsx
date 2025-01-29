@@ -1,2 +1,0 @@
-const CarCard = ({ car }) => 
-[]
