@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./CarList.css";
+import "../styles/CarList.css";
 
 const CarList = () => {
   const [cars, setCars] = useState([]);
