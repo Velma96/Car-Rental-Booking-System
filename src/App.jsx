@@ -10,11 +10,11 @@ const App = () => {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Navigate to="/cars" />} /> {/* ✅ Redirect to /cars by default */}
+        <Route path="/" element={<Navigate to="/cars" />} /> 
         <Route path="/cars" element={<CarList />} />
         <Route path="/cars/:id" element={<CarDetail />} />
         <Route path="/my-bookings" element={<div>My Bookings</div>} />
-        <Route path="*" element={<div>404 - Page Not Found</div>} /> {/* ✅ Handle invalid routes */}
+        <Route path="*" element={<div>404 - Page Not Found</div>} /> 
       </Routes>
     </div>
   );

@@ -10,12 +10,14 @@ const CarCard = ({ car }) => {
         <h3 className="car-model">{car.model}</h3>
         <p className="car-type">Type: {car.type}</p>
         <p className="car-price">Price per day: ${car.pricePerDay}</p>
-        <button className="view-details-btn">
-          <Link to={`/cars/${car.id}`} className="link-btn">View Details</Link>
-        </button>
+
+        <Link to={`/cars/${car.id}`} className="view-details-btn">
+          View Details
+        </Link>
       </div>
     </div>
   );
 };
 
 export default CarCard;
+
