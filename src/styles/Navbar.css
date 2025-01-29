@@ -1,4 +1,4 @@
-.navbar {
+ .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,3 +30,4 @@
   color: #f39c12;
   font-weight: bold;
 }
+
