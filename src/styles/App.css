@@ -1,10 +1,12 @@
-/* Ensure the whole page takes full width */
+
 .app-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  align-items: stretch; /* Prevents width issues */
+  justify-content: flex-start; /* Keeps content aligned */
+  width: 100vw; /* Ensure full viewport width */
+  min-height: 100vh; /* Maintain full height */
+  overflow-x: hidden; /* Prevent unwanted horizontal scrolling */
 }
 
 .car-list {
@@ -12,7 +14,31 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  max-width: 1200px; /* Prevents excessive stretching */
   width: 100%;
+  padding: 20px;
+  margin: 0 auto; /* Centers the content properly */
 }
+
+.car-card {
+  width: 300px; /* Consistent width for all cards */
+  min-width: 280px;
+  max-width: 320px;
+}
+
+.car-details-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+.view-details-btn {
+  width: 100%; /* Ensures button width doesn't change */
+  max-width: 200px;
+  padding: 10px;
+  text-align: center;
+}
+
 
 

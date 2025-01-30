@@ -5,10 +5,12 @@ import FilterPanel from "./FilterPanel";
 
 const CarList = () => {
   const [cars, setCars] = useState([]);
+  const [bookings, setBookings] = useState([]);
   const [filteredCars, setFilteredCars] = useState([]);
   const [filter, setFilter] = useState({ type: "", price: 100 });
 
   useEffect(() => {
+    
     fetch("http://localhost:3001/cars")
       .then((res) => res.json())
       .then((data) => {
@@ -16,6 +18,12 @@ const CarList = () => {
         setFilteredCars(data);
       })
       .catch((err) => console.error("Error fetching cars:", err));
+
+    
+    fetch("http://localhost:3001/bookings")
+      .then((res) => res.json())
+      .then((data) => setBookings(data))
+      .catch((err) => console.error("Error fetching bookings:", err));
   }, []);
 
   const handleFilterChange = (type, price) => {
