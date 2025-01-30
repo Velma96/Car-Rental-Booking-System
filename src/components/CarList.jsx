@@ -1,41 +1,47 @@
 import React, { useState, useEffect } from "react";
 import "../styles/CarList.css";
+import CarCard from "./CarCard";
+import FilterPanel from "./FilterPanel";
 
 const CarList = () => {
   const [cars, setCars] = useState([]);
+  const [filteredCars, setFilteredCars] = useState([]);
+  const [filter, setFilter] = useState({ type: "", price: 100 });
 
   useEffect(() => {
     fetch("http://localhost:3001/cars")
       .then((res) => res.json())
-      .then((data) => setCars(data))
+      .then((data) => {
+        setCars(data);
+        setFilteredCars(data);
+      })
       .catch((err) => console.error("Error fetching cars:", err));
   }, []);
 
-  if (!cars.length) {
-    return <p className="no-cars">No cars available.</p>;
+  const handleFilterChange = (type, price) => {
+    setFilter({ type, price });
+
+    const filtered = cars.filter((car) => {
+      const matchesType = type ? car.type === type : true;
+      const matchesPrice = car.pricePerDay <= price;
+      return matchesType && matchesPrice;
+    });
+
+    setFilteredCars(filtered);
+  };
+
+  if (!filteredCars.length) {
+    return <p className="no-cars">No cars available with the selected filters.</p>;
   }
 
   return (
-    <div className="car-list">
-      {cars.map((car) => (
-        <div
-          key={car.id}
-          className={`car-card ${
-            car.availability.length === 0 ? "unavailable" : ""
-          }`}
-        >
-          <img src={car.image} alt={car.model} className="car-image" />
-          <div className="car-info">
-            <h2>{car.model}</h2>
-            <p>Type: {car.type}</p>
-            <p>Price: ${car.pricePerDay}/day</p>
-            <p>
-              Availability:{" "}
-              {car.availability.length > 0 ? "Available" : "Unavailable"}
-            </p>
-          </div>
-        </div>
-      ))}
+    <div>
+      <FilterPanel onFilterChange={handleFilterChange} />
+      <div className="car-list">
+        {filteredCars.map((car) => (
+          <CarCard key={car.id} car={car} />
+        ))}
+      </div>
     </div>
   );
 };
