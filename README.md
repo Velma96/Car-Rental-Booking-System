@@ -3,7 +3,7 @@
 ## Overview
 
 The Car Rental Booking System is a web application that allows users to browse available rental cars, filter them based on criteria, check availability, and book cars for specific dates.
-A simple and intuitive to-do liast application built using React and Vite
+
 
 ## Table of contents
 
