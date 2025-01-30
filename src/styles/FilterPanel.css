@@ -1,30 +1,20 @@
 .filter-panel {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    background-color: #f8f9fa;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .filter-panel label {
-    display: flex;
-    flex-direction: column;
-    font-weight: bold;
-  }
-  
-  .filter-panel select,
-  .filter-panel input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-top: 5px;
-  }
-  
-  .filter-panel span {
-    font-size: 14px;
-    color: #333;
-  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+}
+
+.filter-panel label {
+  font-weight: bold;
+}
+
+.filter-panel select,
+.filter-panel input {
+  padding: 5px;
+  font-size: 16px;
+}
+
   
