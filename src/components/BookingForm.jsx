@@ -1,13 +1,50 @@
-import React, { useState } from 'react';
-import '../styles/BookingForm.css';
+import React, { useState } from "react";
+import "../styles/BookingForm.css";
 
-const BookingForm = ({ carId, availability }) => {
-  const [dates, setDates] = useState('');
-  const [user, setUser] = useState('');
+const BookingForm = ({ carId }) => {
+  const [dates, setDates] = useState("");
+  const [user, setUser] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Logic to book a car
+
+    if (!user || !dates) {
+      alert("Please enter your name and booking dates.");
+      return;
+    }
+
+    const newBooking = {
+      carId,
+      user,
+      dates: dates.split(",").map((date) => date.trim()), // Convert to an array
+    };
+
+    setLoading(true);
+    
+    try {
+      const response = await fetch("http://localhost:3001/bookings", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newBooking),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to book the car");
+      }
+
+      alert("Booking successful! 🚗✅");
+      setUser("");
+      setDates("");
+
+    } catch (error) {
+      console.error("Error booking the car:", error);
+      alert("Booking failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -26,7 +63,9 @@ const BookingForm = ({ carId, availability }) => {
         onChange={(e) => setDates(e.target.value)}
         required
       />
-      <button type="submit">Book Now</button>
+      <button type="submit" disabled={loading}>
+        {loading ? "Booking..." : "Book Now"}
+      </button>
     </form>
   );
 };
