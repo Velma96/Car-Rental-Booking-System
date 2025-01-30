@@ -3,19 +3,32 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CarList from './components/CarList';
 import CarDetail from './components/CarDetail';
+import FilterPanel from './components/FilterPanel'; 
+import Header from './components/Header';
+import Footer from './components/Footer'; 
+import './styles/App.css';
+
 import './styles/App.css';
 
 const App = () => {
   return (
-    <div>
+    <div className="app-container">
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Navigate to="/cars" />} /> 
-        <Route path="/cars" element={<CarList />} />
-        <Route path="/cars/:id" element={<CarDetail />} />
-        <Route path="/my-bookings" element={<div>My Bookings</div>} />
-        <Route path="*" element={<div>404 - Page Not Found</div>} /> 
-      </Routes>
+      <Header />
+
+      <div className="main-content">
+        <FilterPanel /> 
+
+        <Routes>
+          <Route path="/" element={<Navigate to="/cars" />} />
+          <Route path="/cars" element={<CarList />} />
+          <Route path="/cars/:id" element={<CarDetail />} />
+          <Route path="/my-bookings" element={<div>My Bookings</div>} />
+          <Route path="*" element={<div>404 - Page Not Found</div>} />
+        </Routes>
+      </div>
+
+      <Footer /> 
     </div>
   );
 };
