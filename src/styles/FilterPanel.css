@@ -1,0 +1,20 @@
+.filter-panel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+}
+
+.filter-panel label {
+  font-weight: bold;
+}
+
+.filter-panel select,
+.filter-panel input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+  
