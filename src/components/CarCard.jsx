@@ -6,8 +6,8 @@ const CarCard = ({ car }) => {
   const navigate = useNavigate();
 
   const handleViewDetails = (e) => {
-    e.preventDefault(); 
-    navigate(`/cars/${car.id}`); 
+    e.preventDefault();
+    navigate(`/cars/${car.id}`);
   };
 
   return (
@@ -17,8 +17,9 @@ const CarCard = ({ car }) => {
         <h3 className="car-model">{car.model}</h3>
         <p className="car-type">Type: {car.type}</p>
         <p className="car-price">Price per day: ${car.pricePerDay}</p>
-
-        
+        <p className={`car-status ${car.status === 'Booked' ? 'booked' : 'available'}`}>
+          Status: {car.status || 'Available'}
+        </p>
         <button onClick={handleViewDetails} className="view-details-btn">
           View Details
         </button>
@@ -28,5 +29,3 @@ const CarCard = ({ car }) => {
 };
 
 export default CarCard;
-
-
