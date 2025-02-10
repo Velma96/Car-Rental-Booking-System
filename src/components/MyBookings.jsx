@@ -14,11 +14,10 @@ const MyBookings = () => {
         const carsData = await carsRes.json();
         const bookingsData = await bookingsRes.json();
 
-        
         const matchedCars = bookingsData.map((booking) => {
           const car = carsData.find((car) => car.id === booking.carId);
           return car ? { ...car, bookingDetails: booking } : null;
-        }).filter(Boolean); // Remove null values
+        }).filter(Boolean);
 
         setBookedCars(matchedCars);
       } catch (error) {

@@ -11,7 +11,8 @@
         "2024-01-17"
       ],
       "image": "/images/car1.avif",
-      "description": "A reliable sedan for everyday use."
+      "description": "A reliable sedan for everyday use.",
+      "status": "Booked"
     },
     {
       "id": "2",
@@ -37,7 +38,8 @@
         "2024-01-23"
       ],
       "image": "/images/car3.avif",
-      "description": "An iconic muscle car with great performance."
+      "description": "An iconic muscle car with great performance.",
+      "status": "Booked"
     },
     {
       "id": "4",
@@ -280,33 +282,13 @@
         "2024-01-21"
       ]
     },
+   
     {
-      "id": "75c8",
+
       "carId": "1",
       "user": "velma",
-      "dates": [
-        "2024-01-03"
-      ]
+      "dates": "2025-03-17"
     },
-    {
-      "id": "45f9",
-      "carId": "2",
-      "user": "njeru",
-      "dates": [
-        "12",
-        "1",
-        "2025"
-      ]
-    },
-    {
-      "id": "a04e",
-      "carId": "19",
-      "user": "joy",
-      "dates": [
-        "15",
-        "3",
-        "2025"
-      ]
-    }
+    
   ]
 }

@@ -10,21 +10,33 @@ const CarList = () => {
   const [filter, setFilter] = useState({ type: "", price: 100 });
 
   useEffect(() => {
-    
-    fetch("http://localhost:3001/cars")
-      .then((res) => res.json())
-      .then((data) => {
-        setCars(data);
-        setFilteredCars(data);
-      })
-      .catch((err) => console.error("Error fetching cars:", err));
+    const fetchData = async () => {
+      try {
+        const carsRes = await fetch("http://localhost:3001/cars");
+        const carsData = await carsRes.json();
+        
+        const bookingsRes = await fetch("http://localhost:3001/bookings");
+        const bookingsData = await bookingsRes.json();
 
-    
-    fetch("http://localhost:3001/bookings")
-      .then((res) => res.json())
-      .then((data) => setBookings(data))
-      .catch((err) => console.error("Error fetching bookings:", err));
+        setCars(carsData);
+        setBookings(bookingsData);
+        updateCarStatuses(carsData, bookingsData);
+      } catch (err) {
+        console.error("Error fetching data:", err);
+      }
+    };
+
+    fetchData();
   }, []);
+
+  const updateCarStatuses = (cars, bookings) => {
+    const updatedCars = cars.map(car => {
+      const isBooked = bookings.some(booking => booking.carId === car.id);
+      return { ...car, status: isBooked ? "Booked" : "Available" };
+    });
+
+    setFilteredCars(updatedCars);
+  };
 
   const handleFilterChange = (type, price) => {
     setFilter({ type, price });
@@ -38,18 +50,18 @@ const CarList = () => {
     setFilteredCars(filtered);
   };
 
-  if (!filteredCars.length) {
-    return <p className="no-cars">No cars available with the selected filters.</p>;
-  }
-
   return (
     <div>
       <FilterPanel onFilterChange={handleFilterChange} />
-      <div className="car-list">
-        {filteredCars.map((car) => (
-          <CarCard key={car.id} car={car} />
-        ))}
-      </div>
+      {filteredCars.length === 0 ? (
+        <p className="no-cars">No cars available with the selected filters.</p>
+      ) : (
+        <div className="car-list">
+          {filteredCars.map((car) => (
+            <CarCard key={car.id} car={car} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
